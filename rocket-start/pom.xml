@@ -60,7 +60,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mantianxing.rocket.RocketApplication</mainClass>
+                            <mainClass>com.mantianxing.rocket.application.RocketApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

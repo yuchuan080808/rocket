@@ -17,8 +17,8 @@
 
     <modules>
         <module>rocket-start</module>
-        <module>rocket-web</module>
         <module>rocket-service</module>
+        <module>rocket-web</module>
     </modules>
 
     <dependencies>
@@ -52,6 +52,17 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -64,7 +75,7 @@
             </dependency>
             <dependency>
                 <groupId>com.mantianxing</groupId>
-                <artifactId>rocket-start</artifactId>
+                <artifactId>rocket-service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -74,8 +85,13 @@
             </dependency>
             <dependency>
                 <groupId>com.mantianxing</groupId>
-                <artifactId>rocket-service</artifactId>
+                <artifactId>rocket-start</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -89,7 +105,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mantianxing.rocket.RocketApplication</mainClass>
+                            <mainClass>com.mantianxing.rocket.application.RocketApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

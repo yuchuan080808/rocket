@@ -1,4 +1,4 @@
-package com.mantianxing.rocket;
+package com.mantianxing.rocket.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
