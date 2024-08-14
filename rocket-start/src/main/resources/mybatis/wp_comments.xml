@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mantianxing.rocket.application.server.mapper.CommentsMapper">
+    <resultMap type="com.mantianxing.rocket.application.server.dataObject.CommentsDO" id="CommentsMap">
+        <result column ="comment_ID"          property="commentId"        jdbcType="BIGINT"/>
+        <result column ="comment_post_ID"     property="commentPostId"    jdbcType="BIGINT"/>
+        <result column ="comment_author"      property="commentAuthor"    jdbcType="VARCHAR"/>
+        <result column ="comment_author_email" property="commentAuthorEmail" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="query" resultMap="CommentsMap">
+        select comment_ID,
+        comment_post_ID,
+        comment_author,
+        comment_author_email from wp_comments
+    </select>
+
+</mapper>

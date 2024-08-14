@@ -16,17 +16,25 @@
 
 package com.mantianxing.rocket.demos.web;
 
+//import com.mantianxing.rocket.server.dataObject.CommentsDO;
+//import com.mantianxing.rocket.server.mapper.CommentsMapper;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
 @Controller
 public class BasicController {
+//    @Autowired
+//    private CommentsMapper commentsMapper;
 
     // http://127.0.0.1:8080/hello?name=lisi
     @RequestMapping("/hello")
@@ -34,6 +42,13 @@ public class BasicController {
     public String hello(@RequestParam(name = "name", defaultValue = "unknown user") String name) {
         return "Hello " + name;
     }
+
+//    @RequestMapping("/testMysql")
+//    @ResponseBody
+//    public CommentsDO comments() {
+//        List<CommentsDO> comments = commentsMapper.query(new CommentsDO());
+//        return Optional.ofNullable(comments).map(it ->it.get(0)).orElse(null);
+//    }
 
     // http://127.0.0.1:8080/user
     @RequestMapping("/user")
