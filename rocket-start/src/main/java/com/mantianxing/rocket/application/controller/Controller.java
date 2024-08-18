@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-    private static final String API_KEY = "sk-proj-GxuN3pWnlXTOIIRUKGKpT3BlbkFJZrORoutLYXROrHNE55NE";
     @Autowired
     private CommentsMapper commentsMapper;
 
@@ -33,7 +32,9 @@ public class Controller {
     public String gpt() {
         String content = request.getParameter("content");
 
-        return ChatAgentFactory.chatAgent(CommentAgent.class, API_KEY)
+        String apiKey = request.getParameter("apiKey");
+
+        return ChatAgentFactory.chatAgent(CommentAgent.class, apiKey)
                 .chat(content);
     }
 
