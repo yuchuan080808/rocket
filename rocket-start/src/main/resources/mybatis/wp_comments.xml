@@ -6,13 +6,35 @@
         <result column ="comment_post_ID"     property="commentPostId"    jdbcType="BIGINT"/>
         <result column ="comment_author"      property="commentAuthor"    jdbcType="VARCHAR"/>
         <result column ="comment_author_email" property="commentAuthorEmail" jdbcType="VARCHAR"/>
+        <result column="comment_author_url"   property="commentAuthorUrl"  jdbcType="VARCHAR" />
+        <result column="comment_author_IP"    property="commentAuthorIp"   jdbcType="VARCHAR" />
+        <result column="comment_date"         property="commentDate"       jdbcType="DATE"  />
+        <result column="comment_date_gmt"     property="commentDateGmt"    jdbcType="DATE" />
+        <result column="comment_content"      property="commentContent"    jdbcType="VARCHAR" />
+        <result column="comment_karma"        property="commentKarma"      jdbcType="BIGINT" />
+        <result column="comment_approved"     property="commentApproved"   jdbcType="VARCHAR" />
+        <result column="comment_agent"        property="commentAgent"      jdbcType="VARCHAR" />
+        <result column="comment_type"        property="commentType"        jdbcType="VARCHAR" />
+        <result column="comment_parent"      property="commentParent"      jdbcType="BIGINT" />
+        <result column="user_id"             property="userId"              jdbcType="BIGINT" />
     </resultMap>
 
     <select id="query" resultMap="CommentsMap">
         select comment_ID,
         comment_post_ID,
         comment_author,
-        comment_author_email from wp_comments
+        comment_author_email
+                ,comment_author_url,comment_author_IP,
+               comment_date,
+               comment_date_gmt,
+               comment_content,
+               comment_karma,
+               comment_approved,
+               comment_agent,
+               comment_type,
+               comment_parent,
+               user_id
+        from wp_comments
     </select>
 
 </mapper>
